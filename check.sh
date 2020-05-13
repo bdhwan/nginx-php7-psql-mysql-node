@@ -30,6 +30,8 @@ if test -f "$FILE"; then
     sh start.sh
 fi
 
+echo 'done init check process'
+
 
 
 
