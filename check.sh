@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "ok"
 echo "GIT_URL: "$GIT_URL
+echo "BRANCH: "$BRANCH
 echo "DST_FOLDER: "$DST_FOLDER
 
 
@@ -8,7 +9,7 @@ if [ -z "$GIT_URL" ]
 then
     echo "not defined GIT_URL"
 else 
-    git clone "$GIT_URL"
+    git clone --depth 1 --single-branch --branch ${BRANCH} "$GIT_URL"
     rm -rf /var/www/html
     if [ -z "$DST_FOLDER" ]
     then
@@ -20,6 +21,16 @@ else
         mv $DST_FOLDER /var/www/html
     fi
 fi
+
+
+FILE=/var/www/html/start.sh
+if test -f "$FILE"; then
+    echo "$FILE exist"
+    cd /var/www/html
+    sh start.sh
+fi
+
+
 
 
 

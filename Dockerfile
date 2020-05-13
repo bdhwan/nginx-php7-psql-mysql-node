@@ -31,6 +31,7 @@ RUN sudo apt-get install -y php7.0-mbstring
 
 RUN sudo apt-get install -y php7.0-zip
 
+RUN mkdir /data
 
 RUN rm -rf /etc/php/7.0/fpm/php.ini
 RUN rm -rf /etc/nginx/sites-available/default

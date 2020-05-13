@@ -1,3 +1,4 @@
 #!/bin/bash
-docker build  --no-cache  --tag bdhwan/nginx-php7-psql-mysql-node:0.0.1 .
-docker push bdhwan/nginx-php7-psql-mysql-node:0.0.1
+# docker build  --no-cache  --tag bdhwan/nginx-php7-psql-mysql-node:0.3.2 .
+docker build --tag bdhwan/nginx-php7-psql-mysql-node:0.3.2 .
+docker push bdhwan/nginx-php7-psql-mysql-node:0.3.2
