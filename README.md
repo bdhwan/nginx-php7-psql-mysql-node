@@ -6,12 +6,15 @@
 mysql-client, git, php7.0, php7.0-curl, php7.0-mbstring, nginx postgresql-client php php7.0-fpm php7.0-pgsql php7.0-mysql php7.0-gd php7.0-xml php7.0-intl phpunit 
 ```
 
-<p>local 실행시 </p>
+
+<p>local 실행시 </p>   
+
 ```
 docker run --rm -dti -p 80:80 --mount type=bind,source="$(pwd)",target=/var/www/html -e DOCKER_DB_HOST=dbhost -e DOCKER_DB_USER=test bdhwan/nginx-php7-psql-mysql-node:0.3.3
 ```
-<p>현재폴더를 root로 실행됨 </p>
 
+
+<p>현재폴더를 root로 실행됨 </p>   
 
 
 <p> /data 폴더에 persistent 데이터가 저장됨</p>
