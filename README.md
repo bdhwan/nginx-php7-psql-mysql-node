@@ -16,6 +16,18 @@ mysql-client, git, php7.0, php7.0-curl, php7.0-mbstring, nginx postgresql-client
 docker run --rm -dti -p 80:80 --mount type=bind,source="$(pwd)",target=/var/www/html -e DOCKER_DB_HOST=dbhost -e DOCKER_DB_USER=test bdhwan/nginx-php7-psql-mysql-node:0.3.3
 ```
 
+<p>환경변수 사용방법 </p>
+
+```
+<!DOCTYPE html>
+<html><head></head><body>
+DOCKER_ENV: 
+<?php
+echo 'DOCKER_A ' .$_SERVER["DOCKER_A"] . '!';
+?>
+```
+
+
 
 <p>현재폴더를 root로 실행됨 </p>   
 
