@@ -1,14 +1,22 @@
 # nginx-php7-psql
 우분투 16.04
 
-설치항목
+<p>설치항목</p>
+```
 mysql-client, git, php7.0, php7.0-curl, php7.0-mbstring, nginx postgresql-client php php7.0-fpm php7.0-pgsql php7.0-mysql php7.0-gd php7.0-xml php7.0-intl phpunit 
+```
+
+<p>local 실행시 </p>
+```
+docker run --rm -dti -p 80:80 --mount type=bind,source="$(pwd)",target=/var/www/html -e DOCKER_DB_HOST=dbhost -e DOCKER_DB_USER=test bdhwan/nginx-php7-psql-mysql-node:0.3.3
+```
+<p>현재폴더를 root로 실행됨 </p>
 
 
-start.sh 파일이 있을 경우 시작 시 실행됨 
 
+<p> /data 폴더에 persistent 데이터가 저장됨</p>
 
-/data 폴더에 persistent 데이터가 저장됨
+```
 version: '3.5'
 services:
   php-service:
@@ -28,5 +36,10 @@ services:
     - /etc/localtime:/etc/localtime:ro      
     ports:
     - "7001:80"
+```
+
+
+<p>start.sh 파일이 있을 경우 시작 시 실행됨 </p>
+
 
 
